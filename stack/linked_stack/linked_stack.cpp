@@ -80,8 +80,13 @@ void LinkedStack<T>::push(T const& x) {
 // Изтриване на елемента на върха на стека
 template <typename T>
 T LinkedStack<T>::pop() {
-    assert(!empty());
-
+    // assert(!empty()); // допълнителна проверка при debug
+    // Алтернативно решение е методът да бъде от тип void
+    if (empty()) {
+        std::cerr << "Stack is empty" << std::endl;
+        return T();
+    }
+    
     T result = top();
     
     // Насочване на временен указател към текущия връх на стека, който следва да бъде изтрит
