@@ -1,3 +1,6 @@
+#ifndef __LINKED_STACK_CPP
+#define __LINKED_STACK_CPP
+
 #include <iostream>
 #include "linked_stack.h"
 #include <cassert>
@@ -78,10 +81,10 @@ void LinkedStack<T>::push(T const& x) {
 }
 
 // Изтриване на елемента на върха на стека
+// Алтернативно решение е методът да бъде от тип void
 template <typename T>
 T LinkedStack<T>::pop() {
     // assert(!empty()); // допълнителна проверка при debug
-    // Алтернативно решение е методът да бъде от тип void
     if (empty()) {
         std::cerr << "Stack is empty" << std::endl;
         return T();
@@ -114,3 +117,4 @@ T& LinkedStack<T>::top() {
 
     return topPtr->data;
 }
+#endif
