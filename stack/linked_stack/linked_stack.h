@@ -1,4 +1,5 @@
-#pragma once
+#ifndef __LINKED_STACK_H
+#define __LINKED_STACK_H
 
 template <typename T>
 struct StackElement {
@@ -46,3 +47,4 @@ public:
     T& top();
 };
 
+#endif
